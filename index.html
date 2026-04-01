@@ -342,7 +342,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--paper);color:var(--i
   </div>
 
   <div class="bottom-area">
-    <div id="api-key-section" style="display:none;" style="background:rgba(156,111,30,0.08);border:1px solid rgba(156,111,30,0.25);padding:10px 12px;margin-bottom:2px;">
+    <div id="api-key-section" style="background:rgba(156,111,30,0.08);border:1px solid rgba(156,111,30,0.25);padding:10px 12px;margin-bottom:2px;">
       <div style="font-size:9px;color:var(--gold);letter-spacing:1.5px;margin-bottom:6px;">CLAUDE API KEY <span id="key-status-dot" style="display:none;color:#7ab87a;">✓ 저장됨</span></div>
       <div style="display:flex;gap:6px;">
         <input id="essay-api-key" type="password" placeholder="sk-ant-api03-..." autocomplete="off"
@@ -1000,7 +1000,7 @@ function saveEssayKey(){
   localStorage.setItem('hq_essay_key', v);
   updateKeyDot(v);
 }
-function getEssayKey(){ return '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'; }
+function getEssayKey(){ return localStorage.getItem('hq_essay_key') || ''; }
 function updateKeyDot(k){
   var dot = document.getElementById('key-status-dot');
   if(!dot) return;
